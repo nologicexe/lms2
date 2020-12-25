@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/shrek.webp' %}" alt="shrek">
+        <span class="logo">LMS2</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="far fa-question-circle"></i>О проекте</li></a>
+            <a href="{% url 'news_home'%}"><li><i class="far fa-question-circle"></i>Лента</li></a>
+            <a href="https://lib.mipt.ru/"><li><i class="fad fa-book"></i>Библеотека</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Новая запись</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
